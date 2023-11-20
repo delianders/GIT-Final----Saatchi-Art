@@ -5,7 +5,7 @@ function toggleButton(){
     let darkmode = document.body.classList;
     darkmode.toggle("darkmode");
 }
-
+//action when clicking the button
 document.getElementById("toggleMode").addEventListener("click", toggleButton);
 
 //Guessing Game

@@ -23,6 +23,13 @@ body{
 /* Dark Mode Design */
 body.darkmode{
     background-color: var(--black);
+    color: var(--white);
+    width: 1280px;
+    margin: 0 auto;
+    line-height: 1.5;
+    border-radius: 30px;
+    padding-bottom: 20px;
+    border:  2px solid var(--white);
 }
 
 /* Font and Text Styles */
@@ -40,7 +47,15 @@ h1 a{
     font-weight: 600;
 }
 
+body.darkmode h1 a{
+    color: var(--white);
+}
+
 h1 a:hover{
+    color: var(--orange);
+}
+
+body.darkmode h1 a:hover{
     color: var(--orange);
 }
 
@@ -60,7 +75,7 @@ h2, h3{
     font-weight: 600;
 }
 
-p, button, form, nav a{
+p, button, form, nav a, a, li{
     font-family: var(--main-font);
 }
 
@@ -84,12 +99,15 @@ header h2, #categories h2, #collections h2:first-child, #curators h2{
     display: flex;
     padding: 8px;
     border: 2px dashed var(--white);
+    font-weight: bolder;
+
 }
 
 .toggle:hover{
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--orange);
+    color: var(--white);
     border: 2px dashed var(--black);
+    font-weight: bolder;
 }
 
 .toggle{
@@ -103,6 +121,17 @@ header h2, #categories h2, #collections h2:first-child, #curators h2{
     border: none;
 }
 
+body.darkmode .toggle{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+body.darkmode .toggle:hover{
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px dashed var(--white);
+}
+
 /* Button and Link Styles */
 nav a{
     color: var(--black);
@@ -111,57 +140,48 @@ nav a{
     font-size: 1.1rem;
 }
 
+body.darkmode nav a{
+    color: var(--white);
+}
+
 nav a:hover{
     color: var(--orange);
     border-bottom: 2px solid var(--orange);
     padding-bottom: 2px;
 }
 
-/* #explore-button{
-    background-color: var(--black);
-    color: var(--white);
-    text-decoration: none;
-    padding: 16px;
-    align-items: center;
-    cursor: pointer;
-    font-size: 18px; 
-    border-radius: 15px;
-    text-align: center;
-    margin: 0;
-    justify-content: center;
-    display: flex;
-    border: 2px solid var(--white);
-    width: 100px;
-    font-weight: 200;
-    margin: 0 auto;
-}
-
-#explore-button:hover{
-    border: 2px solid var(--black);
-    background-color: var(--white);
-    color: var(--black);
-} */
-
 #categories a {
-    background-color: var(--white);
     text-decoration: none;
-    color: var(--black);
     cursor: pointer;
     padding: 16px;
     font-size: 24px;
     border-radius: 10px;
-    border: 3px solid var(--black);
-    font-weight: 300;
+    font-weight: 500;
+    background-color: var(--orange);
+    border: 4px solid var(--white);
+    color: var(--white);
 }
 
 #categories a:hover{
-    background-color: var(--orange);
-    border: 2px solid var(--white);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--orange);
+    border: 4px solid var(--orange);
 }
 
 #categories h2{
     margin-top: 30px;
+}
+
+body.darkmode #categories a{
+    background-color: var(--orange);
+    color: var(--white);
+    border: 4px solid var(--white);
+}
+
+body.darkmode #categories a:hover{
+    background-color: var(--white);
+    border: 2px solid var(--orange);
+    color: var(--orange);
 }
 
 .shop{
@@ -170,6 +190,12 @@ nav a:hover{
     text-decoration: none;
     border-bottom: 1px solid var(--black);
     padding-bottom: 3px;
+}
+
+body.darkmode .shop{
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
+
 }
 
 .curator-name {
@@ -185,6 +211,7 @@ nav a:hover{
     padding-right: 50px;
     padding-bottom: 50px;
     padding-top: 50px;
+    justify-items: center;
 }
 
 .curator-link button{
@@ -203,6 +230,26 @@ nav a:hover{
     border-top: 2px solid var(--orange);
     border-bottom: 2px solid var(--orange);
     font-style: italic;
+}
+
+body.darkmode .curator-link button{
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 12px;
+    border: 3px solid var(--orange);
+}
+
+body.darkmode .curator-link button:hover{
+    background-color: var(--orange);
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+body.darkmode .curator-link button:active{
+    background-color: var(--orange);
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 .submit{
@@ -257,13 +304,6 @@ input[type="number"]{
 }
 
 /* Styling Images */
-header img{
-    width: 1280px;
-    max-height: 1596px;
-    flex-shrink: 0;
-    border-radius: 15px;
-}
-
 #collections img{
     height: 500px;
     max-width: 385px;
@@ -300,45 +340,6 @@ nav{
     margin-bottom: 20px;
 }
 
-/* .header-content{ */
-    /* background-image: url("Images/through-the-foliage.jpeg"); */
-    /* background-position: right; */
-    /* background-repeat: no-repeat; */
-    /* background-color: #cd888d;  */
-    /* height: 10px;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-    /* text-align: center; */
-    /* opacity: 0.7; */ 
-/* } */
-
-/* .header-content h2{
-    font-size: 2rem;
-    margin-bottom: 0;
-}
-
-.header-content p{
-    margin-bottom: 2rem;
-    margin-top: 0;
-}
-
-.header-content i{
-    color: var(--black);
-}
-
-.header-content i:hover{
-    color: var(--white);
-} */
-
-/* .header-content div{
-    border: 5px dashed var(--white);
-    padding: 2rem 2rem 2rem 0;
-    border-radius: 60px;
-    width: 50%;
-    margin-left: 15%;
-    color: var(--white);
-} */
-
 #navigation-menu{
     display: flex;
     justify-content: space-between;
@@ -348,6 +349,10 @@ nav{
     border-bottom: 5px solid var(--black);
     padding-bottom: 2rem;
     border-radius: 15px 30px;
+}
+
+body.darkmode #navigation-menu{
+    border-bottom: 5px solid var(--white);
 }
 
 .darkmode{
@@ -363,7 +368,6 @@ nav{
     margin: 40px;
 }
 
-
 #about-saatchi h2, #curators h2:nth-child(3){
     text-align: center;
     /* border-bottom: 2px solid black; */
@@ -374,10 +378,19 @@ nav{
     box-shadow: 3px 5px var(--orange);
 }
 
+body.darkmode #about-saatchi h2, body.darkmode #curators h2:nth-child(3){
+    background-color: var(--white);
+    color: var(--black);
+}
+
 #about-saatchi span{
     font-style: italic;
     font-weight: 900;
     color: #E09F3E;
+}
+
+body.darkmode #about-saatchi strong{
+    color: var(--orange);
 }
 
 /* Styling categories */
@@ -396,7 +409,6 @@ nav{
     padding-top: 8px;
     padding-bottom: 8px;
 }
-
 
 .grid-collect{
     display: grid;
@@ -575,12 +587,25 @@ textarea{
     display: block;
 }
 
+body.darkmode .message{
+    color: var(--orange);
+}
+
+body.darkmode #submitted h3{
+    color: var(--white);
+}
+
+body.darkmode p#submissionForm strong{
+    color: var(--orange);
+}
+
+
 /* Background Images */
 #game{
     border: 3px solid var(--blue);
     border-radius: 15px 30px;
     background-color: #335c67;
-    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png"); 
+    /* background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");  */
 }
 
 html{
