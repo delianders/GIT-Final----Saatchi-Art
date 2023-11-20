@@ -16,24 +16,23 @@
 
     <header>
         <section id="navigation-menu">
-            <h1><a href="#">S<i>aat</i>chi <br>Art</a></h1>
-            <!-- <div class="darkmode"><span class="toggle">Dark Mode</span></div> -->
-            <button class="darkmode"><span class="toggle">Dark Mode</span></button>
+            <h1><a href="#">S<i>aat</i>chi <br><span>Art</span></a></h1>
             <nav>
                 <a href="#about-saatchi">About</a>
                 <a href="#collections">Collection</a>
                 <a href="#curators">Art Advisors</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <button class="darkmode" id="toggleMode"><span class="toggle">Dark Mode</span></button>
         </section>
         <div class="header-content">
             <div>
-                <h2>Welcome To <i>Saatchi Art</i></h2>
+                <!-- <h2>Welcome To <i>Saatchi Art</i></h2>
                 <p>The World's Leading Online Art Gallery</p>
 
                 <h2>New This Week</h2>
                 <p>Discover New Art Our Curator's Love Every Week</p>
-                <a href="#categories" id="explore-button">Explore</a>
+                <a href="#categories" id="explore-button">Explore</a> -->
             </div>
         </div>
     </header>
@@ -42,10 +41,10 @@
         <section id="about-saatchi">
             <img src = "Images/aboutsaatchi.jpeg" alt="a woman in a museum talking">
             <div>
-                <h2>What is <span>Saatchi Art</span></h2>
+                <h2>What is <span>Saatchi Art</span> ?</h2>
                 <p><strong>The Best Place To Buy Art You Love</strong></p>
                 <p>Discover an unparalleled selection of art by artists from around the world to suit all budgets, styles, and spaces.</p>
-                <p><strong> To Knowledgeable Curators</strong></p>
+                <p><strong> To <i>Knowledgeable</i> Curators</strong></p>
                 <p>See new curator-approved artworks in special collections released weekly, or work with an art advisor to get personalized recommendations.</p>
                 <p><strong>Support Emerging Artists</strong></p>
                 <p>We value the talented artists we represent and pay them more on every sale than other galleries.</p>
@@ -124,8 +123,8 @@
                         </div>
 
                         <div>
-                            <img src="Images/comprimere.jpeg" alt="blue painting of things">
-                            <p>Comprimere Painting</p>
+                            <img src="Images/scotto.jpeg" alt="blue painting of things">
+                            <p>Sottopassaggio Painting</p>
                             <p><i>Luigi Iona</i></p>
                         </div>
                     
@@ -214,7 +213,7 @@
 
         <section id="game">
             <div>
-                <h3>Enter a number 1 through  10, for a chance to get 10% off from a rising star!</h3>
+                <h3>Enter a number <span>1 through  10,</span> for a chance to get 10% off from a rising star!</h3>
                 <form>
                     <label>Enter A Number:</label>
                     <input type="number" name="userinput" id="num" class="gameinput">
@@ -230,24 +229,51 @@
             <h2>Connect With An Advisor</h2>
             <p>Get in contact with an advisor to know more about commisons, artists, and more! </p>
 
-            <form action="https://wp.zybooks.com/form-viewer.php" method="POST" class="form-section">
+            <form action="https://wp.zybooks.com/form-viewer.php" method="GET" class="form-section" id="contactForm">
                 
-                <label for="fullname">Full Name *</label>
-                <input type="text" name="fullname" id="fullname" placeholder="Enter Your First and Last Name" required>
+                <label for="fullname">Full Name *</label><br>
+                <span class="message">Please Enter Your Full Name</span>
+                <input type="text" name="fullname" id="fullname" placeholder="Enter Your First and Last Name">
 
-                <label for="email">Email Address *</label>
-                <input type="text" name="email" id="email" placeholder="Enter Your Email">
+                <label for="email">Email Address *</label><br>
+                <span class="message">Please Enter Your Email</span>
+                <input type="text" name="email" id="email" placeholder="ex: john@example.com">
 
-                <!-- <p><b>- OR -</b></p> -->
+                <label for="phone">Phone Number *</label><br>
+                <span class="message">Please Enter Your Phone Number</span>
+                <input type="tel" id="phone" name="phone" placeholder="ex: 000-000-0000">
 
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number">
+                <fieldset>
+                    <legend>Preferred Method of Contact: *</legend>
+                        <label for="email-radio" class="radio">
+                            <span class="radioBtN">
+                            <input type="radio" name="method" id="email-radio" value="email" required checked>
+                            <span class="radio-button"></span>
+                            </span>
+                            <span class="radio-method">Email</span>
+                        </label>
+                        <label for="phone-radio" class="radio">
+                            <span class="radioBTN">
+                            <input type="radio" name="method" id="phone-radio" value="phone">
+                            <span class="radio-button"></span>
+                            </span>
+                            <span class="radio-method">Phone</span>
+                        </label>
+                </fieldset>
 
-                <label for="comment">Comments *</label>
-                <textarea id="comment" placeholder="Enter Your Comments Here" required></textarea>
+                <label for="comment">Comments *</label><br>
+                <span class="message">Please Enter a Comment</span>
+                <textarea id="comment" placeholder="Enter Your Comments Here"></textarea>
+
+                <div id="form-section"></div>
 
                 <button type="submit" class="submit">Submit</button>
             </form>
+            <section id="submitted" class="hide">
+                <h3>Thank You!</h3>
+                <p>Your form has been submitted successfully, here is what you entered below:</p>
+                <p id="submissionForm"></p>
+            </section>
         </section>
 
     </footer>
