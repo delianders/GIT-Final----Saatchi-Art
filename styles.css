@@ -18,6 +18,7 @@ body{
     line-height: 1.5;
     border-radius: 30px;
     padding-bottom: 20px;
+    border: 2px solid var(--black);
 }
 
 /* Dark Mode Design */
@@ -137,7 +138,7 @@ nav a{
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 body.darkmode nav a{
@@ -147,7 +148,6 @@ body.darkmode nav a{
 nav a:hover{
     color: var(--orange);
     border-bottom: 2px solid var(--orange);
-    padding-bottom: 2px;
 }
 
 #categories a {
@@ -200,7 +200,7 @@ body.darkmode .shop{
 
 .curator-name {
     list-style: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 200;
 }
 
@@ -212,24 +212,26 @@ body.darkmode .shop{
     padding-bottom: 50px;
     padding-top: 50px;
     justify-items: center;
+    font-size: 1.5rem;
+    gap: 15px;
 }
 
 .curator-link button{
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     font-weight: 200;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 12px;
     cursor: pointer;
-    background-color: var(--white);
-    border: none;
+    background-color: var(--orange);
+    border: 3px solid var(--orange);
+    border-radius: 10px;
     font-size: 1.25rem;
 }
 
 .curator-link button:active, .curator-link button:hover{
-    border-top: 2px solid var(--orange);
-    border-bottom: 2px solid var(--orange);
     font-style: italic;
+    background-color: var(--white);
+    color: var(--orange);
 }
 
 body.darkmode .curator-link button{
@@ -333,11 +335,11 @@ img:hover{
 /* Styling the header */
 nav{
     display: flex;
-    gap: 10rem;
+    gap: 8rem;
     padding-bottom: 10px;
     float: right;
-    margin-right: 50px;
-    margin-bottom: 20px;
+    margin-right: 5px;
+    align-items: center;
 }
 
 #navigation-menu{
@@ -427,11 +429,20 @@ body.darkmode #about-saatchi strong{
     margin-right: 2rem;
     text-align: justify;
     text-indent: 10px;
+    font-size: 20px;
+}
+
+.curator-list i{
+    color: var(--blue);
+}
+
+ body.darkmode .curator-list i{
+    color: var(--orange);
 }
 
 #curator-list section{
-    align-items: center;
-    justify-items: end;
+    align-items: start;
+    justify-items: start;
 }
 
 #rebecca section{
@@ -477,22 +488,39 @@ body.darkmode #about-saatchi strong{
 /* Game Section */
 #game{
     color: var(--white);
-    border-radius: 60px;
     margin-top: 4rem;
     padding: 2.5rem;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+#game button{
     margin: 0 auto;
 }
 
 #game h3{
     color: var(--white);
-    text-align: center;
     margin: 0 auto;
-    width: 400px;
+    text-align: center;
 }
 
 #game span{
+    color: var(--white);
+    font-size: 20px;
+}
+
+span#choices{
     color: var(--orange);
     font-style: oblique;
+}
+
+#game label{
+    font-size: 20px;
+}
+
+.gameMessage{
+    color: var(--white);
 }
 
 /* Contact Section */
@@ -500,7 +528,7 @@ footer{
     margin-bottom: 30px;
 }
 
-form{
+.form-section{
     width: 500px;
     padding: 30px;
     margin: 0 auto;
@@ -548,9 +576,13 @@ textarea{
 }
 
 /* reference to javascript */
-/* .hide{
+.hide{
     display: none;
-} */
+}
+
+.show{
+    display: block;
+}
 
 /* Form Submission */
 #form-section{
@@ -602,10 +634,9 @@ body.darkmode p#submissionForm strong{
 
 /* Background Images */
 #game{
-    border: 3px solid var(--blue);
+    border: 4px solid var(--blue);
     border-radius: 15px 30px;
     background-color: #335c67;
-    /* background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");  */
 }
 
 html{

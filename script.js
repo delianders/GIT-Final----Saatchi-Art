@@ -8,9 +8,44 @@ function toggleButton(){
 //action when clicking the button
 document.getElementById("toggleMode").addEventListener("click", toggleButton);
 
-//Guessing Game
-
 //Product Display
+
+//Guessing Game
+//generates a random number function
+function randomize(){
+    return Math.floor(Math.random() * 10) + 1;
+}
+
+function guessingGame(e){
+    //prevents from submitting by default
+    e.preventDefault();
+
+    //grabs user input, generated number and holds messages
+    let userInput = document.querySelector("#num");
+    let generatedNumber = document.querySelector(".generatedNum");
+    let gameMessage = document.querySelector(".gameMessage");
+
+    //generate a random number
+    let randomNumber = randomize(1, 10);
+
+    //checks if input is empty, a number and between 1 -10
+    if(userInput.value === "" || isNaN(userInput.value) || userInput.value <= 1 || userInput.value > 11){
+        gameMessage.innerHTML = "Please Enter A Number 1 - 10!"; 
+    //checks if both numbers are a match
+    }else if(userInput !== randomNumber){
+
+        // //displays the inputs and messages to user 
+        userInput.textContent = "Your Number: " + userInput.value;
+        generatedNumber.textContent = "Random Number: " + randomNumber;
+        gameMessage.innerHTML = "You Lost! Try Again.";
+
+    }else{
+        gameMessage.innerHTML = "Congrats! You Won";
+    }
+
+}
+
+document.getElementById("submit-button").addEventListener("click", guessingGame);
 
 //Form Validation
 function formSubmission(event){
@@ -41,7 +76,7 @@ function formSubmission(event){
     let phoneNumber = /^\+?[0-9-]+$/;
 
     //fullname input
-    if(fullname.value === "" || fullname.value.length <= 1 || !nameRgx.test(fullname.value)){
+    if(fullname.value === "" || !nameRgx.test(fullname.value)){
         //displays message when their is an error
         message[0].classList.add("error");
         //when form is invalid
