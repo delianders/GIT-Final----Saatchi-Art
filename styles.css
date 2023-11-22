@@ -455,18 +455,21 @@ body.darkmode #about-saatchi strong{
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr;
     gap: 32px;
+    align-items: center;
 }
 
 #megan section{
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr;
     gap: 32px;
+    align-items: center;
 }
 
 #india section{
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr;
     gap: 32px;
+    align-items: center;
 }
 
 #siting section{
@@ -475,10 +478,11 @@ body.darkmode #about-saatchi strong{
     gap: 32px;
 }
 
-#aubrey section{
+#audrey section{
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr;
     gap: 32px;
+    align-items: center;
 }
 
 #curators ul{
@@ -580,10 +584,6 @@ textarea{
     display: none;
 }
 
-.show{
-    display: block;
-}
-
 /* Form Submission */
 #form-section{
     color: var(--blue);
@@ -634,9 +634,10 @@ body.darkmode p#submissionForm strong{
 
 /* Background Images */
 #game{
-    border: 4px solid var(--blue);
+    border: 4px solid;
+    box-shadow: 4px 8px var(--orange);
     border-radius: 15px 30px;
-    background-color: #335c67;
+    background-color: var(--black);
 }
 
 html{

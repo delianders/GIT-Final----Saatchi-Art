@@ -9,6 +9,88 @@ function toggleButton(){
 document.getElementById("toggleMode").addEventListener("click", toggleButton);
 
 //Product Display
+// hide all function
+function hideAll(){
+    // get all the list items in that list
+    let hideProduct = document.querySelector("#curator-list li").classList.add("hide");
+    //iterate through and add hide class to all
+    for(let i = 1; i < hideProduct; i++){
+        hideProduct[i]++;
+    }
+}
+// for first button/section
+document.getElementById("seeRebecca").addEventListener("click", function(){
+    // hide all list items
+    hideAll();
+    // show the one for this button
+    document.querySelector("#rebecca").classList.remove("hide");
+    //hides all the other buttons and prevents from showing when clicking to other items
+    document.querySelector("#erin").classList.add("hide");
+    document.querySelector("#megan").classList.add("hide");
+    document.querySelector("#india").classList.add("hide");
+    document.querySelector("#siting").classList.add("hide");
+    document.querySelector("#audrey").classList.add("hide");
+
+});
+
+//for second button
+document.getElementById("seeErin").addEventListener("click", function(){
+
+    hideAll();
+
+    document.querySelector("#erin").classList.remove("hide");
+
+    document.querySelector("#megan").classList.add("hide");
+    document.querySelector("#india").classList.add("hide");
+    document.querySelector("#siting").classList.add("hide");
+    document.querySelector("#audrey").classList.add("hide");
+});
+
+//for third button
+document.getElementById("seeMegan").addEventListener("click", function(){
+    hideAll();
+    document.querySelector("#megan").classList.remove("hide");
+
+    document.querySelector("#erin").classList.add("hide");
+    document.querySelector("#india").classList.add("hide");
+    document.querySelector("#siting").classList.add("hide");
+    document.querySelector("#audrey").classList.add("hide");
+
+});
+
+//fourth button
+document.getElementById("seeIndia").addEventListener("click", function(){
+    hideAll();
+    document.querySelector("#india").classList.remove("hide");
+
+    document.querySelector("#erin").classList.add("hide");
+    document.querySelector("#megan").classList.add("hide");
+    document.querySelector("#siting").classList.add("hide");
+    document.querySelector("#audrey").classList.add("hide");
+});
+
+//fifth button
+document.getElementById("seeSiting").addEventListener("click", function(){
+    hideAll();
+    document.querySelector("#siting").classList.remove("hide");
+
+    document.querySelector("#erin").classList.add("hide");
+    document.querySelector("#megan").classList.add("hide");
+    document.querySelector("#india").classList.add("hide");
+    document.querySelector("#audrey").classList.add("hide");
+
+});
+
+//sixth button
+document.getElementById("seeAudrey").addEventListener("click", function(){
+    hideAll();
+    document.querySelector("#audrey").classList.remove("hide");
+    
+    document.querySelector("#erin").classList.add("hide");
+    document.querySelector("#megan").classList.add("hide");
+    document.querySelector("#india").classList.add("hide");
+    document.querySelector("#siting").classList.add("hide");
+});
 
 //Guessing Game
 //generates a random number function
@@ -25,26 +107,30 @@ function guessingGame(e){
     let generatedNumber = document.querySelector(".generatedNum");
     let gameMessage = document.querySelector(".gameMessage");
 
+    //shows the users final output on display
+    let userOutput  = document.querySelector(".userOutput");
+
     //generate a random number
     let randomNumber = randomize(1, 10);
 
     //checks if input is empty, a number and between 1 -10
-    if(userInput.value === "" || isNaN(userInput.value) || userInput.value <= 1 || userInput.value > 11){
+    if(userInput.value === "" || isNaN(userInput.value) || userInput.value < 1 || userInput.value > 10){
         gameMessage.innerHTML = "Please Enter A Number 1 - 10!"; 
     //checks if both numbers are a match
-    }else if(userInput !== randomNumber){
+    }else if(parseInt(userInput.value) !== randomNumber){
 
         // //displays the inputs and messages to user 
-        userInput.textContent = "Your Number: " + userInput.value;
+        userOutput.textContent = "Your Number: " + userInput.value;
         generatedNumber.textContent = "Random Number: " + randomNumber;
         gameMessage.innerHTML = "You Lost! Try Again.";
 
     }else{
-        gameMessage.innerHTML = "Congrats! You Won";
+        userOutput.textContent = "Your Number: " + userInput.value;
+        generatedNumber.textContent = "Random Number: " + randomNumber;
+        gameMessage.innerHTML = "Congrats! You Won!";
     }
 
 }
-
 document.getElementById("submit-button").addEventListener("click", guessingGame);
 
 //Form Validation
